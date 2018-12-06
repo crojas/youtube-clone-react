@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
+import "./VideoPlayer.css"
 
 class VideoPlayer extends React.Component {
   render() {
@@ -10,19 +11,19 @@ class VideoPlayer extends React.Component {
 
     const videoSrc = `https://www.youtube.com/embed/${currentVideo.id.videoId}`;
     return (
-      <Card style={{ with: "400px" }}>
-        <CardMedia src="video">
-          <iframe title="video player" src={videoSrc} />
-        </CardMedia>
-        <CardContent>
-          <Typography component="h4">
-            {currentVideo.snippet.title}
-          </Typography>
-          <Typography component="p">
-            {currentVideo.snippet.description}
-          </Typography>
-        </CardContent>
-      </Card>
+      <div className="video-player">
+        <Card>
+          <CardMedia src="video">
+            <iframe title="video player" src={videoSrc} />
+          </CardMedia>
+          <CardContent>
+            <Typography component="h4">{currentVideo.snippet.title}</Typography>
+            <Typography component="p">
+              {currentVideo.snippet.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, InputBase } from "@material-ui/core";
+import "./SearchBar.css"
 
 class SearchBar extends React.Component {
   state = { searchText: "" };
@@ -15,21 +16,23 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <AppBar>
-        <Toolbar>
-          <Typography>Youtube Clone</Typography>
-          <div>
-            <form onSubmit={this.onFormSubmit}>
-              <InputBase
-                placeholder="Buscar..."
-                value={this.state.searchText}
-                onChange={this.onInputChange}
-                style={{color: 'inherit', width: '300px'}}
-              />
-            </form>
-          </div>
-        </Toolbar>
-      </AppBar>
+      <div className="search-bar">
+        <AppBar>
+          <Toolbar>
+            <Typography variant="title">Youtube Clone</Typography>
+            <div>
+              <form onSubmit={this.onFormSubmit}>
+                <InputBase
+                  placeholder="Buscar..."
+                  value={this.state.searchText}
+                  onChange={this.onInputChange}
+                  style={{ color: "inherit", width: "300px" }}
+                />
+              </form>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }
