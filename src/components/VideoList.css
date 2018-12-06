@@ -1,0 +1,6 @@
+.gridList {
+    display: flex;
+    width: 320px;
+    height: auto;
+    float: right;
+}
